@@ -5,11 +5,16 @@ const PORT = 3009;
 const app = express();
 app.use(express.json());
 
+app.use((req: Request, res: Response, next: NextFunction) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} ${req.params ? JSON.stringify(req.params) : ''} ${req.body ? JSON.stringify(req.body) : '' } ${res.statusCode} `);
+    next();
+});
+
 app.post('/api/token', (req: Request, res: Response) => {
 
-    if (req.body.user_id === '' && req.body.secret === '') {
+    if (req.body.user_id === '123' && req.body.secret === '1234') {
         return res.status(201).json({
-            access_token: '',
+            access_token: 'ubigoiuygfouy66',
             expires_in: 3600
         });
     }

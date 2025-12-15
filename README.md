@@ -96,3 +96,14 @@ The newly created user object, including a randomly generated `id`.
   "email": "newmock@example.com"
 }
 ```
+**CURL tests**
+
+```
+curl -X POST -H "Content-Type: application/json" -d '{"user_id": "123", "secret": "1234"}' http://localhost:3009/api/token
+
+```
+**OR**
+
+```
+curl -X POST -H "Content-Type: application/json" -d "{\"user_id\": \"123\", \"secret\": \"1234\"}" http://localhost:3009/api/token
+```
