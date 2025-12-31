@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 app.use((req: Request, res: Response, next: NextFunction) => {
-    console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} ${req.params ? JSON.stringify(req.params) : ''} ${req.body ? JSON.stringify(req.body) : '' } ${res.statusCode} `);
+    console.log(`[${new Date().toISOString()}] ${req.method} Aut-->  ${req.headers.authorization} ${req.originalUrl} ${req.params ? JSON.stringify(req.params) : ''} Body: ${req.body ? JSON.stringify(req.body) : '' } ${res.statusCode} `);
     next();
 });
 
@@ -24,7 +24,7 @@ app.post('/api/token', (req: Request, res: Response) => {
 const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization;
 
-    if (authHeader && authHeader === 'Bearer MOCKED_BEARER_TOKEN_ABC123XYZ') {
+    if (authHeader && authHeader === 'Bearer ubigoiuygfouy66') {
         next();
     } else {
         res.status(401).json({ message: 'Access denied. Invalid or missing token.' });

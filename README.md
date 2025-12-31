@@ -99,11 +99,17 @@ The newly created user object, including a randomly generated `id`.
 **CURL tests**
 
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"user_id": "123", "secret": "1234"}' http://localhost:3009/api/token
+curl -X -i POST \ 
+-H "Content-Type: application/json" \
+-d '{"user_id": "123", "secret": "1234"}' \
+ http://localhost:3009/api/token
 
 ```
-**OR**
 
 ```
-curl -X POST -H "Content-Type: application/json" -d "{\"user_id\": \"123\", \"secret\": \"1234\"}" http://localhost:3009/api/token
+curl -X -i GET \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer ubigoiuygfouy66" \
+http://localhost:3009/api/users
+
 ```
