@@ -40,9 +40,10 @@ app.get('/api/users', verifyToken, (req: Request, res: Response) => {
 
 app.post('/api/users', verifyToken, (req: Request, res: Response) => {
     const newUser = {
-        id: Math.floor(Math.random() * 1000) + 3,
         ...req.body,
+        id: Math.floor(Math.random() * 1000) + 3,
     };
+    console.log(`New user created: ${JSON.stringify(newUser)}`);
     res.status(201).json(newUser);
 });
 
