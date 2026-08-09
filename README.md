@@ -1,6 +1,7 @@
 # Mock API Server
 
-This is a simple mock API server created with Express and TypeScript.
+This is a simple local mock API server built with Express and TypeScript, designed for studying and practicing different API testing techniques.
+It can be used as a learning project or as a sandbox for exploring different API testing tools and approaches.
 
 ## Installation
 
@@ -96,7 +97,7 @@ The newly created user object, including a randomly generated `id`.
   "email": "newmock@example.com"
 }
 ```
-**CURL tests**
+**CURL test commands**
 
 ```
 curl -X -i POST \ 
