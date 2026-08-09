@@ -15,7 +15,7 @@ This is a simple mock API server created with Express and TypeScript.
 To start the server, run the following command:
 
 ```bash
-npx ts-node server.ts
+npm run start
 ```
 
 The server will start on `http://localhost:3009`.
